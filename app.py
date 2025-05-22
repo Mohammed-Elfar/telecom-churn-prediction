@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Load the trained model
-with open('/Users/mohammedmahmood/Desktop/Data projects/Data science/Telecome_Churn_Prediction /Telecom_churn_prediction.sav', "rb") as file:
+with open('Telecom_churn_prediction.sav', "rb") as file:
     model = pickle.load(file)
 
 st.title(" Telecom Customer Churn Prediction App")
@@ -59,6 +59,6 @@ if st.button("Predict Churn"):
         if prediction[0] == 1:
             st.error(" This customer is likely to churn based on his information!")
         else:
-            st.success("✅ This customer is likely to staybased on his information!")
+            st.success("✅ This customer is likely to stay based on his information!")
     except Exception as e:
         st.error(f"Error during prediction: {e}")
