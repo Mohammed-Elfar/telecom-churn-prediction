@@ -2,11 +2,13 @@
 
 The goal is to predict whether a telecom customer will churn (stop using the service) based on features like usage patterns, account details, and customer service interactions. 
 
+**link pf the app** : https://telecom-churn-prediction-dyetrdabpc2obkzvpluqiu.streamlit.app/
+
 ## Approach & Steps:
 
 1- Understanding the data variables: This step is important because it allows you to understand the meaning of each variable and how it might be related to the dependent variable
 
-2- Check data type true or column dt need handling , null and duplicate 
+2- checked if the data types were correct and didn’t need changes, then looked for missing or repeated data.
 
 3- Univariate analysis:  In this step i will go through each column and fix problems , look at the distribution of each variable and do Eda for features to understand
 
