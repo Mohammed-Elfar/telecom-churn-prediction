@@ -1,8 +1,8 @@
-# Approach
+# Telecom Churn Prediction
 
 The goal is to predict whether a telecom customer will churn (stop using the service) based on features like usage patterns, account details, and customer service interactions. 
 
-**link pf the app** : https://telecom-churn-prediction-dyetrdabpc2obkzvpluqiu.streamlit.app/
+**link of the app** : https://telecom-churn-prediction-dyetrdabpc2obkzvpluqiu.streamlit.app/
 
 ## Approach & Steps:
 
