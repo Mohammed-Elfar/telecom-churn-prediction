@@ -4,13 +4,8 @@ import pandas as pd
 
 # ================= Load Model =================
 
-MODEL_PATH = os.path.join("Model", "Telecom_churn_prediction.sav")
-
-with open(MODEL_PATH, "rb") as file:
-        model = pickle.load(file)
-
-# with open('Model', "rb") as file:
-#     model = pickle.load(file)
+with open('Telecome_Churn_Prediction.sav', "rb") as file:
+    model = pickle.load(file)
 
 st.title("Telecom Customer Churn Prediction App")
 st.markdown("Enter the customer's details below to predict which customers are likely to leave the company")
