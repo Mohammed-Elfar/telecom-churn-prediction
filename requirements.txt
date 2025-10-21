@@ -3,7 +3,7 @@ streamlit
 pandas
 numpy
 plotly
-scikit-learn==1.7.2
+scikit-learn==1.5.2
 imbalanced-learn
 category-encoders
 xgboost
