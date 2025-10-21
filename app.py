@@ -6,8 +6,8 @@ import pandas as pd
 with open('/Users/mohammedmahmood/Desktop/Data projects/Data science/Telecome_Churn_Prediction /Telecome_Churn_Prediction.sav', "rb") as file:
     model = pickle.load(file)
 
-st.title("📞 Telecom Customer Churn Prediction App")
-st.markdown("Enter the customer’s details below to predict if they are likely to churn.")
+st.title("Telecom Customer Churn Prediction App")
+st.markdown("Enter the customer's details below to predict which customers are likely to leave the company")
 
 # ================= Inputs =================
 col1, col2 = st.columns(2)
@@ -35,10 +35,10 @@ customer_service_calls = st.slider("Customer Service Calls", 0, 9, 1)
 # --- Automatically set High_service_calls based on condition ---
 if customer_service_calls > 3:
     high_service_calls = 1
-    st.error("🚨 High number of service calls ")  # Red box
+    st.error("🚨 High number of service calls ")  
 else:
     high_service_calls = 0
-    st.success("✅ Normal number of service calls")  # Green box
+    st.success("✅ Normal number of service calls")  
 
 # Optional: Show numeric value as metric too
 st.metric("High Service Calls (Auto)", high_service_calls)
@@ -63,12 +63,14 @@ input_data = pd.DataFrame([{
 if st.button("Predict Churn"):
     prediction = model.predict(input_data)[0]
 
-    # Predict probability (Random Forest supports this)
-    proba = model.predict_proba(input_data)[0][1]  # probability of churn (class = 1)
+    # Predict probability 
+    proba = model.predict_proba(input_data)[0][1]  
 
     st.subheader("Prediction Result")
 
     if prediction == 1:
-        st.error(f"This customer is **likely to CHURN** with (Probability of: {proba:.2%})")
+        st.error(f"This customer is **likely to CHURN** with Probability: {proba:.2%}")
     else:
-        st.success(f"This customer is **likely to STAY** with (Probability of churn: {proba:.2%})")
+        st.success(f"This customer is **likely to STAY** with Probability: {proba:.2%}")
+        
+
