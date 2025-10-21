@@ -1,9 +1,6 @@
-pickle
 streamlit
 pandas
 numpy
 plotly
-scikit-learn==1.5.2
+scikit-learn
 imbalanced-learn
-category-encoders
-xgboost
