@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # ================= Load Model =================
-with open('/Users/mohammedmahmood/Desktop/Data projects/Data science/Telecome_Churn_Prediction /Telecome_Churn_Prediction.sav', "rb") as file:
+with open('Model/Telecome_Churn_Prediction.sav', "rb") as file:
     model = pickle.load(file)
 
 st.title("Telecom Customer Churn Prediction App")
