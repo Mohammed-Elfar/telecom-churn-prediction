@@ -31,15 +31,17 @@ st.metric("Total Charge (Auto Calculated)", f"{Total_charge:.2f}")
 
 customer_service_calls = st.slider("Customer Service Calls", 0, 9, 1)
 
-# --- Automatically set High_service_calls ---
+
+# --- Automatically set High_service_calls based on condition ---
 if customer_service_calls > 3:
     high_service_calls = 1
+    st.error("🚨 High number of service calls ")  # Red box
 else:
     high_service_calls = 0
+    st.success("✅ Normal number of service calls")  # Green box
 
-# Show the calculated result (so user knows)
-st.metric("📞 High Service Calls (> 3 customer service calls for user will be in High Service Calls )", f"{high_service_calls}")
-
+# Optional: Show numeric value as metric too
+st.metric("High Service Calls (Auto)", high_service_calls)
 
 # ================= Prepare Input Data =================
 input_data = pd.DataFrame([{
