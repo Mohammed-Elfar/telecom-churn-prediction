@@ -1,20 +1,11 @@
-
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
 
-
 # ================= Load Model =================
+MODEL_PATH = 'Model/Telecome_Churn_Prediction.joblib'
+model = joblib.load(MODEL_PATH)
 
-with open('Model/Telecome_Churn_Prediction.sav', "rb") as file:
-    model = pickle.load(file)
-
-
-# MODEL_PATH = os.path.join("Model", "Telecome_Churn_Prediction.sav")
-
-# with open(MODEL_PATH, "rb") as file:
-#     model = pickle.load(file)
-    
 st.title("Telecom Customer Churn Prediction App")
 st.markdown("Enter the customer's details below to predict which customers are likely to leave the company")
 
@@ -31,6 +22,7 @@ with col2:
     total_day_charge = st.slider("Total Day Charge", 0.0, 59.64, 30.56)
     total_eve_charge = st.slider("Total Evening Charge", 0.0, 30.91, 17.08)
     total_night_charge = st.slider("Total Night Charge", 1.04, 17.77, 9.04)
+    total_intl_minutes = st.slider("Total International Minutes", 0.0, 20.0, 10.0)
     total_intl_calls = st.slider("Total International Calls", 0, 20, 4)
     total_intl_charge = st.slider("Total International Charge", 0.0, 5.4, 2.76)
 
@@ -61,6 +53,7 @@ input_data = pd.DataFrame([{
     'Total_day_charge': total_day_charge,
     'Total_eve_charge': total_eve_charge,
     'Total_night_charge': total_night_charge,
+     'Total_intl_minutes': total_intl_minutes, 
     'Total_intl_calls': total_intl_calls,
     'Total_intl_charge': total_intl_charge,
     'Customer_service_calls': customer_service_calls,
@@ -81,5 +74,5 @@ if st.button("Predict Churn"):
         st.error(f"This customer is **likely to CHURN** with Probability: {proba:.2%}")
     else:
         st.success(f"This customer is **likely to STAY** with Probability: {proba:.2%}")
-        
+
 
