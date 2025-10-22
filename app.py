@@ -6,14 +6,14 @@ import os
 
 # ================= Load Model =================
 
-# with open('Telecome_Churn_Prediction.sav', "rb") as file:
-#     model = pickle.load(file)
-
-
-MODEL_PATH = os.path.join("Model", "Telecome_Churn_Prediction.sav")
-
-with open(MODEL_PATH, "rb") as file:
+with open('Model/Telecome_Churn_Prediction.sav', "rb") as file:
     model = pickle.load(file)
+
+
+# MODEL_PATH = os.path.join("Model", "Telecome_Churn_Prediction.sav")
+
+# with open(MODEL_PATH, "rb") as file:
+#     model = pickle.load(file)
     
 st.title("Telecom Customer Churn Prediction App")
 st.markdown("Enter the customer's details below to predict which customers are likely to leave the company")
